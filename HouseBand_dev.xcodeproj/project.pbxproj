@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19C678D5143A0D7100092485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D4143A0D7100092485 /* UIKit.framework */; };
+		19C678D7143A0D7100092485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D6143A0D7100092485 /* Foundation.framework */; };
+		19C678D9143A0D7100092485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D8143A0D7100092485 /* CoreGraphics.framework */; };
+		19C678DF143A0D7100092485 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19C678DD143A0D7100092485 /* InfoPlist.strings */; };
+		19C678E2143A0D7100092485 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C678E1143A0D7100092485 /* main.m */; };
+		19C678E5143A0D7100092485 /* HouseBand_devAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C678E4143A0D7100092485 /* HouseBand_devAppDelegate.m */; };
+		19C678E8143A0D7100092485 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C678E6143A0D7100092485 /* MainWindow.xib */; };
+		19C678EB143A0D7100092485 /* HouseBand_devViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C678EA143A0D7100092485 /* HouseBand_devViewController.m */; };
+		19C678EE143A0D7100092485 /* HouseBand_devViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C678EC143A0D7100092485 /* HouseBand_devViewController.xib */; };
+		19C678F5143A0D7100092485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D4143A0D7100092485 /* UIKit.framework */; };
+		19C678F6143A0D7100092485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D6143A0D7100092485 /* Foundation.framework */; };
+		19C678F7143A0D7100092485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C678D8143A0D7100092485 /* CoreGraphics.framework */; };
+		19C678FF143A0D7100092485 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19C678FD143A0D7100092485 /* InfoPlist.strings */; };
+		19C67902143A0D7100092485 /* HouseBand_devTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 19C67901143A0D7100092485 /* HouseBand_devTests.h */; };
+		19C67904143A0D7100092485 /* HouseBand_devTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C67903143A0D7100092485 /* HouseBand_devTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19C678F8143A0D7100092485 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19C678C7143A0D7100092485 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19C678CF143A0D7100092485;
+			remoteInfo = HouseBand_dev;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19C678D0143A0D7100092485 /* HouseBand_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseBand_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C678D4143A0D7100092485 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		19C678D6143A0D7100092485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		19C678D8143A0D7100092485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		19C678DC143A0D7100092485 /* HouseBand_dev-Info.plist */ = {isa = PBXFileReference; path = "HouseBand_dev-Info.plist"; sourceTree = "<group>"; };
+		19C678DE143A0D7100092485 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		19C678E0143A0D7100092485 /* HouseBand_dev-Prefix.pch */ = {isa = PBXFileReference; path = "HouseBand_dev-Prefix.pch"; sourceTree = "<group>"; };
+		19C678E1143A0D7100092485 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19C678E3143A0D7100092485 /* HouseBand_devAppDelegate.h */ = {isa = PBXFileReference; path = HouseBand_devAppDelegate.h; sourceTree = "<group>"; };
+		19C678E4143A0D7100092485 /* HouseBand_devAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseBand_devAppDelegate.m; sourceTree = "<group>"; };
+		19C678E7143A0D7100092485 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		19C678E9143A0D7100092485 /* HouseBand_devViewController.h */ = {isa = PBXFileReference; path = HouseBand_devViewController.h; sourceTree = "<group>"; };
+		19C678EA143A0D7100092485 /* HouseBand_devViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseBand_devViewController.m; sourceTree = "<group>"; };
+		19C678ED143A0D7100092485 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HouseBand_devViewController.xib; sourceTree = "<group>"; };
+		19C678F4143A0D7100092485 /* HouseBand_devTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouseBand_devTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C678FC143A0D7100092485 /* HouseBand_devTests-Info.plist */ = {isa = PBXFileReference; path = "HouseBand_devTests-Info.plist"; sourceTree = "<group>"; };
+		19C678FE143A0D7100092485 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		19C67900143A0D7100092485 /* HouseBand_devTests-Prefix.pch */ = {isa = PBXFileReference; path = "HouseBand_devTests-Prefix.pch"; sourceTree = "<group>"; };
+		19C67901143A0D7100092485 /* HouseBand_devTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HouseBand_devTests.h; sourceTree = "<group>"; };
+		19C67903143A0D7100092485 /* HouseBand_devTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseBand_devTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19C678CD143A0D7100092485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C678D5143A0D7100092485 /* UIKit.framework in Frameworks */,
+				19C678D7143A0D7100092485 /* Foundation.framework in Frameworks */,
+				19C678D9143A0D7100092485 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C678F0143A0D7100092485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C678F5143A0D7100092485 /* UIKit.framework in Frameworks */,
+				19C678F6143A0D7100092485 /* Foundation.framework in Frameworks */,
+				19C678F7143A0D7100092485 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C678C5143A0D7100092485 = {
+			isa = PBXGroup;
+			children = (
+				19C678DA143A0D7100092485 /* HouseBand_dev */,
+				19C678FA143A0D7100092485 /* HouseBand_devTests */,
+				19C678D3143A0D7100092485 /* Frameworks */,
+				19C678D1143A0D7100092485 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19C678D1143A0D7100092485 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19C678D0143A0D7100092485 /* HouseBand_dev.app */,
+				19C678F4143A0D7100092485 /* HouseBand_devTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19C678D3143A0D7100092485 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19C678D4143A0D7100092485 /* UIKit.framework */,
+				19C678D6143A0D7100092485 /* Foundation.framework */,
+				19C678D8143A0D7100092485 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19C678DA143A0D7100092485 /* HouseBand_dev */ = {
+			isa = PBXGroup;
+			children = (
+				19C678E3143A0D7100092485 /* HouseBand_devAppDelegate.h */,
+				19C678E4143A0D7100092485 /* HouseBand_devAppDelegate.m */,
+				19C678E6143A0D7100092485 /* MainWindow.xib */,
+				19C678E9143A0D7100092485 /* HouseBand_devViewController.h */,
+				19C678EA143A0D7100092485 /* HouseBand_devViewController.m */,
+				19C678EC143A0D7100092485 /* HouseBand_devViewController.xib */,
+				19C678DB143A0D7100092485 /* Supporting Files */,
+			);
+			path = HouseBand_dev;
+			sourceTree = "<group>";
+		};
+		19C678DB143A0D7100092485 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19C678DC143A0D7100092485 /* HouseBand_dev-Info.plist */,
+				19C678DD143A0D7100092485 /* InfoPlist.strings */,
+				19C678E0143A0D7100092485 /* HouseBand_dev-Prefix.pch */,
+				19C678E1143A0D7100092485 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19C678FA143A0D7100092485 /* HouseBand_devTests */ = {
+			isa = PBXGroup;
+			children = (
+				19C67901143A0D7100092485 /* HouseBand_devTests.h */,
+				19C67903143A0D7100092485 /* HouseBand_devTests.m */,
+				19C678FB143A0D7100092485 /* Supporting Files */,
+			);
+			path = HouseBand_devTests;
+			sourceTree = "<group>";
+		};
+		19C678FB143A0D7100092485 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19C678FC143A0D7100092485 /* HouseBand_devTests-Info.plist */,
+				19C678FD143A0D7100092485 /* InfoPlist.strings */,
+				19C67900143A0D7100092485 /* HouseBand_devTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19C678CF143A0D7100092485 /* HouseBand_dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C67907143A0D7100092485 /* Build configuration list for PBXNativeTarget "HouseBand_dev" */;
+			buildPhases = (
+				19C678CC143A0D7100092485 /* Sources */,
+				19C678CD143A0D7100092485 /* Frameworks */,
+				19C678CE143A0D7100092485 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HouseBand_dev;
+			productName = HouseBand_dev;
+			productReference = 19C678D0143A0D7100092485 /* HouseBand_dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19C678F3143A0D7100092485 /* HouseBand_devTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C6790A143A0D7100092485 /* Build configuration list for PBXNativeTarget "HouseBand_devTests" */;
+			buildPhases = (
+				19C678EF143A0D7100092485 /* Sources */,
+				19C678F0143A0D7100092485 /* Frameworks */,
+				19C678F1143A0D7100092485 /* Resources */,
+				19C678F2143A0D7100092485 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19C678F9143A0D7100092485 /* PBXTargetDependency */,
+			);
+			name = HouseBand_devTests;
+			productName = HouseBand_devTests;
+			productReference = 19C678F4143A0D7100092485 /* HouseBand_devTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19C678C7143A0D7100092485 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "MI Artbox, Incorporated";
+			};
+			buildConfigurationList = 19C678CA143A0D7100092485 /* Build configuration list for PBXProject "HouseBand_dev" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 19C678C5143A0D7100092485;
+			productRefGroup = 19C678D1143A0D7100092485 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19C678CF143A0D7100092485 /* HouseBand_dev */,
+				19C678F3143A0D7100092485 /* HouseBand_devTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19C678CE143A0D7100092485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C678DF143A0D7100092485 /* InfoPlist.strings in Resources */,
+				19C678E8143A0D7100092485 /* MainWindow.xib in Resources */,
+				19C678EE143A0D7100092485 /* HouseBand_devViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C678F1143A0D7100092485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C678FF143A0D7100092485 /* InfoPlist.strings in Resources */,
+				19C67902143A0D7100092485 /* HouseBand_devTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19C678F2143A0D7100092485 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19C678CC143A0D7100092485 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C678E2143A0D7100092485 /* main.m in Sources */,
+				19C678E5143A0D7100092485 /* HouseBand_devAppDelegate.m in Sources */,
+				19C678EB143A0D7100092485 /* HouseBand_devViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C678EF143A0D7100092485 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C67904143A0D7100092485 /* HouseBand_devTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19C678F9143A0D7100092485 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19C678CF143A0D7100092485 /* HouseBand_dev */;
+			targetProxy = 19C678F8143A0D7100092485 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19C678DD143A0D7100092485 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C678DE143A0D7100092485 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		19C678E6143A0D7100092485 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C678E7143A0D7100092485 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		19C678EC143A0D7100092485 /* HouseBand_devViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C678ED143A0D7100092485 /* en */,
+			);
+			name = HouseBand_devViewController.xib;
+			sourceTree = "<group>";
+		};
+		19C678FD143A0D7100092485 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C678FE143A0D7100092485 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19C67905143A0D7100092485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		19C67906143A0D7100092485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		19C67908143A0D7100092485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HouseBand_dev/HouseBand_dev-Prefix.pch";
+				INFOPLIST_FILE = "HouseBand_dev/HouseBand_dev-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		19C67909143A0D7100092485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HouseBand_dev/HouseBand_dev-Prefix.pch";
+				INFOPLIST_FILE = "HouseBand_dev/HouseBand_dev-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		19C6790B143A0D7100092485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HouseBand_dev.app/HouseBand_dev";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HouseBand_devTests/HouseBand_devTests-Prefix.pch";
+				INFOPLIST_FILE = "HouseBand_devTests/HouseBand_devTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		19C6790C143A0D7100092485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HouseBand_dev.app/HouseBand_dev";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HouseBand_devTests/HouseBand_devTests-Prefix.pch";
+				INFOPLIST_FILE = "HouseBand_devTests/HouseBand_devTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19C678CA143A0D7100092485 /* Build configuration list for PBXProject "HouseBand_dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C67905143A0D7100092485 /* Debug */,
+				19C67906143A0D7100092485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C67907143A0D7100092485 /* Build configuration list for PBXNativeTarget "HouseBand_dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C67908143A0D7100092485 /* Debug */,
+				19C67909143A0D7100092485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19C6790A143A0D7100092485 /* Build configuration list for PBXNativeTarget "HouseBand_devTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C6790B143A0D7100092485 /* Debug */,
+				19C6790C143A0D7100092485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19C678C7143A0D7100092485 /* Project object */;
+}
