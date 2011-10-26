@@ -7,9 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#include <AudioToolbox/AudioToolbox.h>
+
+#import "HouseBandTrack.h";
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface HouseBand_devViewController : UIViewController {
+	CADisplayLink *displayLink;
     
+    HouseBandTrack* track_a;
+    HouseBandTrack* track_b;
+    HouseBandTrack* track_c;
+    HouseBandTrack* track_d;
+
+    UIView* loop1;
+    UIView* loop2;
+    UIView* loop3;
+    UIView* loop4;
+    UIView* loop5;
+    UIView* loop6;
+    UIView* loop7;
+    UIView* loop8;
+    UIView* loop9;
+    UIView* loop10;
+    UIView* loop11;
+    UIView* loop12;
 }
+
+
 
 @end
