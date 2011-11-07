@@ -36,7 +36,7 @@
 
 -(void)initTracks:(NSString*)prefix at:(NSTimeInterval)now{
     
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath], prefix, @"1.mp3" ]];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath], prefix, @"1.wav" ]];
     track1 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     track1.numberOfLoops = -1;
     track1.meteringEnabled = YES;
@@ -44,7 +44,7 @@
     
     [url release];
     
-    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"2.mp3" ]];
+    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"2.wav" ]];
     track2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     track2.numberOfLoops = -1;
     track2.meteringEnabled = YES;
@@ -52,41 +52,111 @@
     
     [url release];
     
-    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"3.mp3" ]];
+    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"3.wav" ]];
     track3 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     track3.numberOfLoops = -1;
     track3.meteringEnabled = YES;
     track3.delegate = self;
     
+    [url release];
+    
+    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"3.wav" ]];
+    track4 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    track4.numberOfLoops = -1;
+    track4.meteringEnabled = YES;
+    track4.delegate = self;
+    
+    [url release];
+    
+    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"3.wav" ]];
+    track5 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    track5.numberOfLoops = -1;
+    track5.meteringEnabled = YES;
+    track5.delegate = self;
+    
     NSTimeInterval playbackDelay = 0;              // must be ≥ 0
     
+    
+    [self muteAll];
     
     [track1 playAtTime: now + playbackDelay];
     [track2 playAtTime: now + playbackDelay];
     [track3 playAtTime: now + playbackDelay];
-
+    [track4 playAtTime: now + playbackDelay];
+    [track5 playAtTime: now + playbackDelay];
+    
+    current_track = 0;
+    all_muted = YES;
 }
 
 -(void)doLoop:(int)track{
+    
+    
     switch(track){
         case 0:
             track1.volume = 1;
             track2.volume = 0;
             track3.volume = 0;
+            track4.volume = 0;
+            track5.volume = 0;
             break;
         case 1:
             track1.volume = 0;
             track2.volume = 1;
             track3.volume = 0;
+            track4.volume = 0;
+            track5.volume = 0;
             break;
         case 2:
             track1.volume = 0;
             track2.volume = 0;
             track3.volume = 1;
+            track4.volume = 0;
+            track5.volume = 0;
+            break;
+        case 3:
+            track1.volume = 0;
+            track2.volume = 0;
+            track3.volume = 0;
+            track4.volume = 1;
+            track5.volume = 0;
+            break;
+        case 4:
+            track1.volume = 0;
+            track2.volume = 0;
+            track3.volume = 0;
+            track4.volume = 0;
+            track5.volume = 1;
             break;
     }
     
     NSLog(@"dooooooloop%i", track);
+
+    
+    if(current_track == track){
+        
+        if(!all_muted){
+            [self muteAll];
+        }
+        else{
+            all_muted = NO;
+        }
+        
+    }
+    
+    current_track = track;
+
+    
+    
+}
+
+-(void)muteAll{
+    track1.volume = 0;
+    track2.volume = 0;
+    track3.volume = 0;
+    track4.volume = 0;
+    track5.volume = 0;
+    all_muted = YES;
 }
 
 
@@ -106,6 +176,14 @@
         case 2:
             [track3 updateMeters];
             level = [track3 averagePowerForChannel:1] * track3.volume;
+            break;
+        case 3:
+            [track4 updateMeters];
+            level = [track4 averagePowerForChannel:1] * track4.volume;
+            break;
+        case 4:
+            [track5 updateMeters];
+            level = [track5 averagePowerForChannel:1] * track5.volume;
             break;
     }
     

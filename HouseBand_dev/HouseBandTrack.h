@@ -18,6 +18,9 @@
     AVAudioPlayer *track4;
     AVAudioPlayer *track5;
     
+    int current_track;
+    bool all_muted;
+    
 }
 @property (nonatomic, retain) AVAudioPlayer *track1;
 @property (nonatomic, retain) AVAudioPlayer *track2;
@@ -29,6 +32,6 @@
 
 -(void)doLoop:(int)track;
 -(float)getVol:(int)track;
-
+-(void)muteAll;
 
 @end
