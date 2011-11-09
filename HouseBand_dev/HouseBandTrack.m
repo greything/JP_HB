@@ -93,8 +93,19 @@
 }
 
 -(void)playAt:(NSTimeInterval)now{
-    NSTimeInterval playbackDelay = 0;              // must be ≥ 0
+    NSTimeInterval playbackDelay = 0;  // must be ≥ 0
 
+    [self stop];
+    
+    [track1 prepareToPlay];
+    [track2 prepareToPlay];
+    [track3 prepareToPlay];
+    [track4 prepareToPlay];
+
+    track1.currentTime = 0;
+    track2.currentTime = 0;
+    track3.currentTime = 0;
+    track4.currentTime = 0;
     
     [track1 playAtTime: now + playbackDelay];
     [track2 playAtTime: now + playbackDelay];
@@ -248,23 +259,7 @@
     
 }
 
-/*
- 
- if(track1 != nil){
- [track1 updateMeters];
- NSLog(@"%f", [track1 averagePowerForChannel:1]);
- 
- float level = [track1 averagePowerForChannel:1];
- 
- if(current_focus != nil){
- 
- current_focus.center = CGPointMake(200 + level, current_focus.center.y);
- 
- 
- }
- 
- }
- */
+
 
 
 

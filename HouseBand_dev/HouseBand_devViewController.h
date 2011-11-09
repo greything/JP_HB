@@ -47,6 +47,7 @@
     UIView* buttons;
     
     bool recording;
+    bool playing;
     
     CGPoint buttons_touch;
     int buttons_offset;

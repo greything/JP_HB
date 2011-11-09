@@ -45,7 +45,7 @@
 																							  forMode:NSRunLoopCommonModes];
 	[displayLink setFrameInterval:1];
     
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], @"track1.mp3" ]];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], @"synth1.wav" ]];
     time_track = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     time_track.numberOfLoops = -1;
     time_track.delegate = self;
@@ -67,9 +67,18 @@
     [[HouseBandTracks objectAtIndex:3] initTracks:@"synth" at:now];
     [[HouseBandTracks objectAtIndex:4] initTracks:@"bass" at:now];
 
+    playing = true;
+    
+    UIButton *clearAllButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    clearAllButton.frame = CGRectMake(20.0, 190.0, 70.0, 60.0);
+    [clearAllButton setBackgroundColor:[UIColor purpleColor]];
+    [clearAllButton setTitle:@"clear" forState:UIControlStateNormal];
+    [clearAllButton addTarget:self action:@selector(clearAll:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:clearAllButton];  
+    
     
     UIButton *playButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-    playButton.frame = CGRectMake(20.0, 190.0, 70.0, 60.0);
+    playButton.frame = CGRectMake(380.0, 190.0, 70.0, 60.0);
     [playButton setBackgroundColor:[UIColor purpleColor]];
     [playButton setTitle:@"SFX" forState:UIControlStateNormal];
     [playButton addTarget:self action:@selector(playAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -110,11 +119,14 @@
     [Families addObject:[[characters objectAtIndex:12] large_image]];
     [Families addObject:[[characters objectAtIndex:16] large_image]];
     
-    [self setCharacter:0];
-    [self setCharacter:4];
-    [self setCharacter:8];
-    [self setCharacter:12];
-    [self setCharacter:16];
+   //[self setCharacter:0];
+   // [self setCharacter:4];
+   // [self setCharacter:8];
+   // [self setCharacter:12];
+   // [self setCharacter:16];
+    
+    [self stopAll];
+    
 
     [super viewDidLoad];
 }
@@ -168,6 +180,7 @@
 -(void) createButtons{
     
     buttons = [[UIView alloc] initWithFrame:CGRectMake(10,10,10,10)];
+    buttons.tag = -1;
     [self moveButtonsTo:0];
     
     buttons.backgroundColor = [UIColor redColor];
@@ -205,13 +218,13 @@
 
     [self.view addSubview:buttons];
     
-    [self moveButtonsTo:20];
+    [self moveButtonsTo:0];
     
 }
 
 -(void) moveButtonsTo:(int)left{
     
-    buttons.frame = CGRectMake(left, 648, 2500, 120);
+    buttons.frame = CGRectMake(left, 0, 2500, 100);
     
 }
 
@@ -224,8 +237,19 @@
 
 -(void) setCharacter:(int)track{
     
+    
     int family = track / 4;
     int family_track = track - (family * 4);
+    
+    for(int i = 0; i < 4; i++){
+        
+        [[buttons viewWithTag:((family * 4) + i)] setAlpha:1];
+        
+    }
+    
+    [[buttons viewWithTag:track] setAlpha:0.6];
+    NSLog(@"setting track %i to be translucent", track);
+
     
     //[self.view addSubview:[[characters objectAtIndex:track] large_image]];
     
@@ -235,30 +259,72 @@
     [[HouseBandTracks objectAtIndex:family] doLoop:family_track];
     
     NSLog(@"button is saying to go to track %i, family is %i, making family track : %i", track, family, family_track);
-    
+    [self playAll];//if not playing, start
+
 }
 
 -(void)stopAll:(id)sender{
-    for(int i = 0; i < [HouseBandTracks count]; i++){
-        [[HouseBandTracks objectAtIndex:i] stop];
-    }
+    
+    [self stopAll];
+    
 }
 
+-(void) stopAll{
+    
+    if(playing){
+        playing = false;
+        
+        NSLog(@"stop all action!");
+        
+        for(int i = 0; i < [HouseBandTracks count]; i++){
+            [[HouseBandTracks objectAtIndex:i] stop];
+        }
+    }
+    
+}
+
+
+-(void) clearAll:(id)sender{
+    
+    [self stopAll];
+    
+    for(int i = 0; i < [Families count]; i++){
+        
+        [[Families objectAtIndex:i] removeFromSuperview];
+        [[HouseBandTracks objectAtIndex:i] muteAll];
+        
+    }
+    
+    for(int i = 0; i < [characters count]; i++){
+        
+        [[buttons viewWithTag:i] setAlpha:1];
+        
+    }
+}
 
 -(void)playAll:(id)sender{
-    
-    NSTimeInterval now = time_track.deviceCurrentTime;
-    
-    for(int i = 0; i < [HouseBandTracks count]; i++){
-        [[HouseBandTracks objectAtIndex:i] playAt:now];
-    }
+  
+    [self playAll];
 }
 
+-(void)playAll{
+    NSLog(@"play all action!");
 
+    if(!playing)
+    {
+        playing = true;
+        
+        NSTimeInterval now = time_track.deviceCurrentTime;
+        
+        for(int i = 0; i < [HouseBandTracks count]; i++){
+            [[HouseBandTracks objectAtIndex:i] playAt:now];
+        }
+    }
+}
 
 -(void)playAction:(id)sender {
     
-    NSLog(@"play action!");
+    NSLog(@"play sfx action!");
     if(one_shot_track){
         [one_shot_track stop];
         one_shot_track.currentTime = 0;
@@ -268,6 +334,9 @@
 }
 
 
+/*
+lowerTracks and restoreTracks are called to dip the volume and then return it to its previous state during and after recording.
+*/
 -(void)lowerTracks{
     for(int i = 0; i < [HouseBandTracks count]; i++){
         
@@ -275,7 +344,6 @@
         
     }
 }
-
 -(void)restoreTracks{
     for(int i = 0; i < [HouseBandTracks count]; i++){
         
@@ -307,6 +375,7 @@
     }
 }
 
+//Stop Recording, called by NSTimer in startAction
 -(void)stopAction:(id)sender {
     
     [recordButton setBackgroundColor:[UIColor redColor]];
