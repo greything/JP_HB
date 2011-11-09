@@ -26,6 +26,49 @@
 		19C67927143A170E00092485 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C67926143A170E00092485 /* AudioToolbox.framework */; };
 		19C6792B143A209700092485 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C6792A143A209700092485 /* QuartzCore.framework */; };
 		19C67932143A31C400092485 /* HouseBandTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C67931143A31C400092485 /* HouseBandTrack.m */; };
+		7723539214684FC5006B4ADA /* HB_Menu_Line_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723539114684FC5006B4ADA /* HB_Menu_Line_FPO.png */; };
+		774433A81468307E00181A48 /* HouseCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 774433A61468307E00181A48 /* HouseCharacter.m */; };
+		774433A91468307E00181A48 /* HouseCharacter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 774433A71468307E00181A48 /* HouseCharacter.xib */; };
+		774433D4146841CC00181A48 /* HB_Q1_Boy_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433AC146841CC00181A48 /* HB_Q1_Boy_FPO.png */; };
+		774433D5146841CC00181A48 /* HB_Q1_Boy_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433AD146841CC00181A48 /* HB_Q1_Boy_Thumb_FPO.png */; };
+		774433D6146841CC00181A48 /* HB_Q1_Dad_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433AE146841CC00181A48 /* HB_Q1_Dad_FPO.png */; };
+		774433D7146841CC00181A48 /* HB_Q1_Dad_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433AF146841CC00181A48 /* HB_Q1_Dad_Thumb_FPO.png */; };
+		774433D8146841CC00181A48 /* HB_Q1_Girl_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B0146841CC00181A48 /* HB_Q1_Girl_FPO.png */; };
+		774433D9146841CC00181A48 /* HB_Q1_Girl_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B1146841CC00181A48 /* HB_Q1_Girl_Thumb_FPO.png */; };
+		774433DA146841CC00181A48 /* HB_Q1_Mom_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B2146841CC00181A48 /* HB_Q1_Mom_FPO.png */; };
+		774433DB146841CC00181A48 /* HB_Q1_Mom_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B3146841CC00181A48 /* HB_Q1_Mom_Thumb_FPO.png */; };
+		774433DC146841CC00181A48 /* HB_Q2_Dishwasher_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B4146841CC00181A48 /* HB_Q2_Dishwasher_FPO.png */; };
+		774433DD146841CC00181A48 /* HB_Q2_Dishwasher_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B5146841CC00181A48 /* HB_Q2_Dishwasher_Thumb_FPO.png */; };
+		774433DE146841CC00181A48 /* HB_Q2_Dryer_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B6146841CC00181A48 /* HB_Q2_Dryer_FPO.png */; };
+		774433DF146841CC00181A48 /* HB_Q2_Dryer_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B7146841CC00181A48 /* HB_Q2_Dryer_Thumb_FPO.png */; };
+		774433E0146841CC00181A48 /* HB_Q2_Vaccum_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B8146841CC00181A48 /* HB_Q2_Vaccum_FPO.png */; };
+		774433E1146841CC00181A48 /* HB_Q2_Vaccum_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433B9146841CC00181A48 /* HB_Q2_Vaccum_Thumb_FPO.png */; };
+		774433E2146841CC00181A48 /* HB_Q2_Washer_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BA146841CC00181A48 /* HB_Q2_Washer_FPO.png */; };
+		774433E3146841CC00181A48 /* HB_Q2_Washer_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BB146841CC00181A48 /* HB_Q2_Washer_Thumb_FPO.png */; };
+		774433E4146841CC00181A48 /* HB_Q3_Computer_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BC146841CC00181A48 /* HB_Q3_Computer_FPO.png */; };
+		774433E5146841CC00181A48 /* HB_Q3_Computer_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BD146841CC00181A48 /* HB_Q3_Computer_Thumb_FPO.png */; };
+		774433E6146841CC00181A48 /* HB_Q3_Kettle_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BE146841CC00181A48 /* HB_Q3_Kettle_FPO.png */; };
+		774433E7146841CC00181A48 /* HB_Q3_Kettle_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433BF146841CC00181A48 /* HB_Q3_Kettle_Thumb_FPO.png */; };
+		774433E8146841CC00181A48 /* HB_Q3_Toaster_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C0146841CC00181A48 /* HB_Q3_Toaster_FPO.png */; };
+		774433E9146841CC00181A48 /* HB_Q3_Toaster_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C1146841CC00181A48 /* HB_Q3_Toaster_Thumb_FPO.png */; };
+		774433EA146841CC00181A48 /* HB_Q3_TV_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C2146841CC00181A48 /* HB_Q3_TV_FPO.png */; };
+		774433EB146841CC00181A48 /* HB_Q3_TV_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C3146841CC00181A48 /* HB_Q3_TV_Thumb_FPO.png */; };
+		774433EC146841CC00181A48 /* HB_Q4_BlowDryer_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C4146841CC00181A48 /* HB_Q4_BlowDryer_FPO.png */; };
+		774433ED146841CC00181A48 /* HB_Q4_BlowDryer_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C5146841CC00181A48 /* HB_Q4_BlowDryer_Thumb_FPO.png */; };
+		774433EE146841CC00181A48 /* HB_Q4_Iron_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C6146841CC00181A48 /* HB_Q4_Iron_FPO.png */; };
+		774433EF146841CC00181A48 /* HB_Q4_Iron_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C7146841CC00181A48 /* HB_Q4_Iron_Thumb_FPO.png */; };
+		774433F0146841CC00181A48 /* HB_Q4_Ketchup_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C8146841CC00181A48 /* HB_Q4_Ketchup_FPO.png */; };
+		774433F1146841CC00181A48 /* HB_Q4_Ketchup_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433C9146841CC00181A48 /* HB_Q4_Ketchup_Thumb_FPO.png */; };
+		774433F2146841CC00181A48 /* HB_Q4_SodaCan_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CA146841CC00181A48 /* HB_Q4_SodaCan_FPO.png */; };
+		774433F3146841CC00181A48 /* HB_Q4_SodaCan_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CB146841CC00181A48 /* HB_Q4_SodaCan_Thumb_FPO.png */; };
+		774433F4146841CC00181A48 /* HB_Q5_Fridge_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CC146841CC00181A48 /* HB_Q5_Fridge_FPO.png */; };
+		774433F5146841CC00181A48 /* HB_Q5_Fridge_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CD146841CC00181A48 /* HB_Q5_Fridge_Thumb_FPO.png */; };
+		774433F6146841CC00181A48 /* HB_Q5_Garbage_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CE146841CC00181A48 /* HB_Q5_Garbage_FPO.png */; };
+		774433F7146841CC00181A48 /* HB_Q5_Garbage_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433CF146841CC00181A48 /* HB_Q5_Garbage_Thumb_FPO.png */; };
+		774433F8146841CC00181A48 /* HB_Q5_Oven_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433D0146841CC00181A48 /* HB_Q5_Oven_FPO.png */; };
+		774433F9146841CC00181A48 /* HB_Q5_Oven_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433D1146841CC00181A48 /* HB_Q5_Oven_Thumb_FPO.png */; };
+		774433FA146841CC00181A48 /* HB_Q5_Toilet_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433D2146841CC00181A48 /* HB_Q5_Toilet_FPO.png */; };
+		774433FB146841CC00181A48 /* HB_Q5_Toilet_Thumb_FPO.png in Resources */ = {isa = PBXBuildFile; fileRef = 774433D3146841CC00181A48 /* HB_Q5_Toilet_Thumb_FPO.png */; };
 		77647F6A146461D00081D1DD /* bass1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F5E146461D00081D1DD /* bass1.wav */; };
 		77647F6B146461D00081D1DD /* bass2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F5F146461D00081D1DD /* bass2.wav */; };
 		77647F6C146461D00081D1DD /* bass3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F60146461D00081D1DD /* bass3.wav */; };
@@ -38,6 +81,10 @@
 		77647F73146461D00081D1DD /* synth1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F67146461D00081D1DD /* synth1.wav */; };
 		77647F74146461D00081D1DD /* synth2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F68146461D00081D1DD /* synth2.wav */; };
 		77647F75146461D00081D1DD /* synth3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77647F69146461D00081D1DD /* synth3.wav */; };
+		77A8FFDC14689FB4008481B3 /* HB_Background_FPO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77A8FFDB14689FB4008481B3 /* HB_Background_FPO.jpg */; };
+		77A8FFE01469C343008481B3 /* vocals1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77A8FFDD1469C343008481B3 /* vocals1.wav */; };
+		77A8FFE11469C343008481B3 /* vocals2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77A8FFDE1469C343008481B3 /* vocals2.wav */; };
+		77A8FFE21469C343008481B3 /* vocals3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77A8FFDF1469C343008481B3 /* vocals3.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +123,50 @@
 		19C6792A143A209700092485 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		19C67930143A31C400092485 /* HouseBandTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseBandTrack.h; sourceTree = "<group>"; };
 		19C67931143A31C400092485 /* HouseBandTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseBandTrack.m; sourceTree = "<group>"; };
+		7723539114684FC5006B4ADA /* HB_Menu_Line_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Menu_Line_FPO.png; path = HouseBand_FPO/HB_Menu_Line_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433A51468307E00181A48 /* HouseCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseCharacter.h; sourceTree = "<group>"; };
+		774433A61468307E00181A48 /* HouseCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseCharacter.m; sourceTree = "<group>"; };
+		774433A71468307E00181A48 /* HouseCharacter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseCharacter.xib; sourceTree = "<group>"; };
+		774433AC146841CC00181A48 /* HB_Q1_Boy_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Boy_FPO.png; path = HouseBand_FPO/HB_Q1_Boy_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433AD146841CC00181A48 /* HB_Q1_Boy_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Boy_Thumb_FPO.png; path = HouseBand_FPO/HB_Q1_Boy_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433AE146841CC00181A48 /* HB_Q1_Dad_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Dad_FPO.png; path = HouseBand_FPO/HB_Q1_Dad_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433AF146841CC00181A48 /* HB_Q1_Dad_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Dad_Thumb_FPO.png; path = HouseBand_FPO/HB_Q1_Dad_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B0146841CC00181A48 /* HB_Q1_Girl_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Girl_FPO.png; path = HouseBand_FPO/HB_Q1_Girl_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B1146841CC00181A48 /* HB_Q1_Girl_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Girl_Thumb_FPO.png; path = HouseBand_FPO/HB_Q1_Girl_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B2146841CC00181A48 /* HB_Q1_Mom_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Mom_FPO.png; path = HouseBand_FPO/HB_Q1_Mom_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B3146841CC00181A48 /* HB_Q1_Mom_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q1_Mom_Thumb_FPO.png; path = HouseBand_FPO/HB_Q1_Mom_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B4146841CC00181A48 /* HB_Q2_Dishwasher_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Dishwasher_FPO.png; path = HouseBand_FPO/HB_Q2_Dishwasher_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B5146841CC00181A48 /* HB_Q2_Dishwasher_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Dishwasher_Thumb_FPO.png; path = HouseBand_FPO/HB_Q2_Dishwasher_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B6146841CC00181A48 /* HB_Q2_Dryer_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Dryer_FPO.png; path = HouseBand_FPO/HB_Q2_Dryer_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B7146841CC00181A48 /* HB_Q2_Dryer_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Dryer_Thumb_FPO.png; path = HouseBand_FPO/HB_Q2_Dryer_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B8146841CC00181A48 /* HB_Q2_Vaccum_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Vaccum_FPO.png; path = HouseBand_FPO/HB_Q2_Vaccum_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433B9146841CC00181A48 /* HB_Q2_Vaccum_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Vaccum_Thumb_FPO.png; path = HouseBand_FPO/HB_Q2_Vaccum_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BA146841CC00181A48 /* HB_Q2_Washer_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Washer_FPO.png; path = HouseBand_FPO/HB_Q2_Washer_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BB146841CC00181A48 /* HB_Q2_Washer_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q2_Washer_Thumb_FPO.png; path = HouseBand_FPO/HB_Q2_Washer_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BC146841CC00181A48 /* HB_Q3_Computer_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Computer_FPO.png; path = HouseBand_FPO/HB_Q3_Computer_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BD146841CC00181A48 /* HB_Q3_Computer_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Computer_Thumb_FPO.png; path = HouseBand_FPO/HB_Q3_Computer_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BE146841CC00181A48 /* HB_Q3_Kettle_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Kettle_FPO.png; path = HouseBand_FPO/HB_Q3_Kettle_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433BF146841CC00181A48 /* HB_Q3_Kettle_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Kettle_Thumb_FPO.png; path = HouseBand_FPO/HB_Q3_Kettle_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C0146841CC00181A48 /* HB_Q3_Toaster_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Toaster_FPO.png; path = HouseBand_FPO/HB_Q3_Toaster_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C1146841CC00181A48 /* HB_Q3_Toaster_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_Toaster_Thumb_FPO.png; path = HouseBand_FPO/HB_Q3_Toaster_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C2146841CC00181A48 /* HB_Q3_TV_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_TV_FPO.png; path = HouseBand_FPO/HB_Q3_TV_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C3146841CC00181A48 /* HB_Q3_TV_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q3_TV_Thumb_FPO.png; path = HouseBand_FPO/HB_Q3_TV_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C4146841CC00181A48 /* HB_Q4_BlowDryer_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_BlowDryer_FPO.png; path = HouseBand_FPO/HB_Q4_BlowDryer_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C5146841CC00181A48 /* HB_Q4_BlowDryer_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_BlowDryer_Thumb_FPO.png; path = HouseBand_FPO/HB_Q4_BlowDryer_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C6146841CC00181A48 /* HB_Q4_Iron_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_Iron_FPO.png; path = HouseBand_FPO/HB_Q4_Iron_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C7146841CC00181A48 /* HB_Q4_Iron_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_Iron_Thumb_FPO.png; path = HouseBand_FPO/HB_Q4_Iron_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C8146841CC00181A48 /* HB_Q4_Ketchup_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_Ketchup_FPO.png; path = HouseBand_FPO/HB_Q4_Ketchup_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433C9146841CC00181A48 /* HB_Q4_Ketchup_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_Ketchup_Thumb_FPO.png; path = HouseBand_FPO/HB_Q4_Ketchup_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CA146841CC00181A48 /* HB_Q4_SodaCan_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_SodaCan_FPO.png; path = HouseBand_FPO/HB_Q4_SodaCan_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CB146841CC00181A48 /* HB_Q4_SodaCan_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q4_SodaCan_Thumb_FPO.png; path = HouseBand_FPO/HB_Q4_SodaCan_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CC146841CC00181A48 /* HB_Q5_Fridge_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Fridge_FPO.png; path = HouseBand_FPO/HB_Q5_Fridge_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CD146841CC00181A48 /* HB_Q5_Fridge_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Fridge_Thumb_FPO.png; path = HouseBand_FPO/HB_Q5_Fridge_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CE146841CC00181A48 /* HB_Q5_Garbage_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Garbage_FPO.png; path = HouseBand_FPO/HB_Q5_Garbage_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433CF146841CC00181A48 /* HB_Q5_Garbage_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Garbage_Thumb_FPO.png; path = HouseBand_FPO/HB_Q5_Garbage_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433D0146841CC00181A48 /* HB_Q5_Oven_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Oven_FPO.png; path = HouseBand_FPO/HB_Q5_Oven_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433D1146841CC00181A48 /* HB_Q5_Oven_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Oven_Thumb_FPO.png; path = HouseBand_FPO/HB_Q5_Oven_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433D2146841CC00181A48 /* HB_Q5_Toilet_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Toilet_FPO.png; path = HouseBand_FPO/HB_Q5_Toilet_FPO.png; sourceTree = SOURCE_ROOT; };
+		774433D3146841CC00181A48 /* HB_Q5_Toilet_Thumb_FPO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HB_Q5_Toilet_Thumb_FPO.png; path = HouseBand_FPO/HB_Q5_Toilet_Thumb_FPO.png; sourceTree = SOURCE_ROOT; };
 		77647F5E146461D00081D1DD /* bass1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bass1.wav; path = assets/tracks/bass1.wav; sourceTree = "<group>"; };
 		77647F5F146461D00081D1DD /* bass2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bass2.wav; path = assets/tracks/bass2.wav; sourceTree = "<group>"; };
 		77647F60146461D00081D1DD /* bass3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bass3.wav; path = assets/tracks/bass3.wav; sourceTree = "<group>"; };
@@ -88,6 +179,10 @@
 		77647F67146461D00081D1DD /* synth1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synth1.wav; path = assets/tracks/synth1.wav; sourceTree = "<group>"; };
 		77647F68146461D00081D1DD /* synth2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synth2.wav; path = assets/tracks/synth2.wav; sourceTree = "<group>"; };
 		77647F69146461D00081D1DD /* synth3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synth3.wav; path = assets/tracks/synth3.wav; sourceTree = "<group>"; };
+		77A8FFDB14689FB4008481B3 /* HB_Background_FPO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HB_Background_FPO.jpg; path = HouseBand_FPO/HB_Background_FPO.jpg; sourceTree = SOURCE_ROOT; };
+		77A8FFDD1469C343008481B3 /* vocals1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = vocals1.wav; path = assets/tracks/vocals1.wav; sourceTree = "<group>"; };
+		77A8FFDE1469C343008481B3 /* vocals2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = vocals2.wav; path = assets/tracks/vocals2.wav; sourceTree = "<group>"; };
+		77A8FFDF1469C343008481B3 /* vocals3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = vocals3.wav; path = assets/tracks/vocals3.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +227,9 @@
 				77647F67146461D00081D1DD /* synth1.wav */,
 				77647F68146461D00081D1DD /* synth2.wav */,
 				77647F69146461D00081D1DD /* synth3.wav */,
+				77A8FFDD1469C343008481B3 /* vocals1.wav */,
+				77A8FFDE1469C343008481B3 /* vocals2.wav */,
+				77A8FFDF1469C343008481B3 /* vocals3.wav */,
 			);
 			name = TRACKS;
 			sourceTree = "<group>";
@@ -171,12 +269,17 @@
 		19C678DA143A0D7100092485 /* HouseBand_dev */ = {
 			isa = PBXGroup;
 			children = (
+				7723538F14684FA4006B4ADA /* StructureAssets */,
+				774433AB1468418300181A48 /* CharacterAssets */,
 				190DFAA9143CA01400012AB5 /* TRACKS */,
 				19C678E3143A0D7100092485 /* HouseBand_devAppDelegate.h */,
 				19C678E4143A0D7100092485 /* HouseBand_devAppDelegate.m */,
 				19C678E6143A0D7100092485 /* MainWindow.xib */,
 				19C678E9143A0D7100092485 /* HouseBand_devViewController.h */,
 				19C678EA143A0D7100092485 /* HouseBand_devViewController.m */,
+				774433A51468307E00181A48 /* HouseCharacter.h */,
+				774433A61468307E00181A48 /* HouseCharacter.m */,
+				774433A71468307E00181A48 /* HouseCharacter.xib */,
 				19C67930143A31C400092485 /* HouseBandTrack.h */,
 				19C67931143A31C400092485 /* HouseBandTrack.m */,
 				19C678EC143A0D7100092485 /* HouseBand_devViewController.xib */,
@@ -214,6 +317,62 @@
 				19C67900143A0D7100092485 /* HouseBand_devTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7723538F14684FA4006B4ADA /* StructureAssets */ = {
+			isa = PBXGroup;
+			children = (
+				77A8FFDB14689FB4008481B3 /* HB_Background_FPO.jpg */,
+				7723539114684FC5006B4ADA /* HB_Menu_Line_FPO.png */,
+			);
+			name = StructureAssets;
+			sourceTree = "<group>";
+		};
+		774433AB1468418300181A48 /* CharacterAssets */ = {
+			isa = PBXGroup;
+			children = (
+				774433AC146841CC00181A48 /* HB_Q1_Boy_FPO.png */,
+				774433AD146841CC00181A48 /* HB_Q1_Boy_Thumb_FPO.png */,
+				774433AE146841CC00181A48 /* HB_Q1_Dad_FPO.png */,
+				774433AF146841CC00181A48 /* HB_Q1_Dad_Thumb_FPO.png */,
+				774433B0146841CC00181A48 /* HB_Q1_Girl_FPO.png */,
+				774433B1146841CC00181A48 /* HB_Q1_Girl_Thumb_FPO.png */,
+				774433B2146841CC00181A48 /* HB_Q1_Mom_FPO.png */,
+				774433B3146841CC00181A48 /* HB_Q1_Mom_Thumb_FPO.png */,
+				774433B4146841CC00181A48 /* HB_Q2_Dishwasher_FPO.png */,
+				774433B5146841CC00181A48 /* HB_Q2_Dishwasher_Thumb_FPO.png */,
+				774433B6146841CC00181A48 /* HB_Q2_Dryer_FPO.png */,
+				774433B7146841CC00181A48 /* HB_Q2_Dryer_Thumb_FPO.png */,
+				774433B8146841CC00181A48 /* HB_Q2_Vaccum_FPO.png */,
+				774433B9146841CC00181A48 /* HB_Q2_Vaccum_Thumb_FPO.png */,
+				774433BA146841CC00181A48 /* HB_Q2_Washer_FPO.png */,
+				774433BB146841CC00181A48 /* HB_Q2_Washer_Thumb_FPO.png */,
+				774433BC146841CC00181A48 /* HB_Q3_Computer_FPO.png */,
+				774433BD146841CC00181A48 /* HB_Q3_Computer_Thumb_FPO.png */,
+				774433BE146841CC00181A48 /* HB_Q3_Kettle_FPO.png */,
+				774433BF146841CC00181A48 /* HB_Q3_Kettle_Thumb_FPO.png */,
+				774433C0146841CC00181A48 /* HB_Q3_Toaster_FPO.png */,
+				774433C1146841CC00181A48 /* HB_Q3_Toaster_Thumb_FPO.png */,
+				774433C2146841CC00181A48 /* HB_Q3_TV_FPO.png */,
+				774433C3146841CC00181A48 /* HB_Q3_TV_Thumb_FPO.png */,
+				774433C4146841CC00181A48 /* HB_Q4_BlowDryer_FPO.png */,
+				774433C5146841CC00181A48 /* HB_Q4_BlowDryer_Thumb_FPO.png */,
+				774433C6146841CC00181A48 /* HB_Q4_Iron_FPO.png */,
+				774433C7146841CC00181A48 /* HB_Q4_Iron_Thumb_FPO.png */,
+				774433C8146841CC00181A48 /* HB_Q4_Ketchup_FPO.png */,
+				774433C9146841CC00181A48 /* HB_Q4_Ketchup_Thumb_FPO.png */,
+				774433CA146841CC00181A48 /* HB_Q4_SodaCan_FPO.png */,
+				774433CB146841CC00181A48 /* HB_Q4_SodaCan_Thumb_FPO.png */,
+				774433CC146841CC00181A48 /* HB_Q5_Fridge_FPO.png */,
+				774433CD146841CC00181A48 /* HB_Q5_Fridge_Thumb_FPO.png */,
+				774433CE146841CC00181A48 /* HB_Q5_Garbage_FPO.png */,
+				774433CF146841CC00181A48 /* HB_Q5_Garbage_Thumb_FPO.png */,
+				774433D0146841CC00181A48 /* HB_Q5_Oven_FPO.png */,
+				774433D1146841CC00181A48 /* HB_Q5_Oven_Thumb_FPO.png */,
+				774433D2146841CC00181A48 /* HB_Q5_Toilet_FPO.png */,
+				774433D3146841CC00181A48 /* HB_Q5_Toilet_Thumb_FPO.png */,
+			);
+			name = CharacterAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +460,52 @@
 				77647F73146461D00081D1DD /* synth1.wav in Resources */,
 				77647F74146461D00081D1DD /* synth2.wav in Resources */,
 				77647F75146461D00081D1DD /* synth3.wav in Resources */,
+				774433A91468307E00181A48 /* HouseCharacter.xib in Resources */,
+				774433D4146841CC00181A48 /* HB_Q1_Boy_FPO.png in Resources */,
+				774433D5146841CC00181A48 /* HB_Q1_Boy_Thumb_FPO.png in Resources */,
+				774433D6146841CC00181A48 /* HB_Q1_Dad_FPO.png in Resources */,
+				774433D7146841CC00181A48 /* HB_Q1_Dad_Thumb_FPO.png in Resources */,
+				774433D8146841CC00181A48 /* HB_Q1_Girl_FPO.png in Resources */,
+				774433D9146841CC00181A48 /* HB_Q1_Girl_Thumb_FPO.png in Resources */,
+				774433DA146841CC00181A48 /* HB_Q1_Mom_FPO.png in Resources */,
+				774433DB146841CC00181A48 /* HB_Q1_Mom_Thumb_FPO.png in Resources */,
+				774433DC146841CC00181A48 /* HB_Q2_Dishwasher_FPO.png in Resources */,
+				774433DD146841CC00181A48 /* HB_Q2_Dishwasher_Thumb_FPO.png in Resources */,
+				774433DE146841CC00181A48 /* HB_Q2_Dryer_FPO.png in Resources */,
+				774433DF146841CC00181A48 /* HB_Q2_Dryer_Thumb_FPO.png in Resources */,
+				774433E0146841CC00181A48 /* HB_Q2_Vaccum_FPO.png in Resources */,
+				774433E1146841CC00181A48 /* HB_Q2_Vaccum_Thumb_FPO.png in Resources */,
+				774433E2146841CC00181A48 /* HB_Q2_Washer_FPO.png in Resources */,
+				774433E3146841CC00181A48 /* HB_Q2_Washer_Thumb_FPO.png in Resources */,
+				774433E4146841CC00181A48 /* HB_Q3_Computer_FPO.png in Resources */,
+				774433E5146841CC00181A48 /* HB_Q3_Computer_Thumb_FPO.png in Resources */,
+				774433E6146841CC00181A48 /* HB_Q3_Kettle_FPO.png in Resources */,
+				774433E7146841CC00181A48 /* HB_Q3_Kettle_Thumb_FPO.png in Resources */,
+				774433E8146841CC00181A48 /* HB_Q3_Toaster_FPO.png in Resources */,
+				774433E9146841CC00181A48 /* HB_Q3_Toaster_Thumb_FPO.png in Resources */,
+				774433EA146841CC00181A48 /* HB_Q3_TV_FPO.png in Resources */,
+				774433EB146841CC00181A48 /* HB_Q3_TV_Thumb_FPO.png in Resources */,
+				774433EC146841CC00181A48 /* HB_Q4_BlowDryer_FPO.png in Resources */,
+				774433ED146841CC00181A48 /* HB_Q4_BlowDryer_Thumb_FPO.png in Resources */,
+				774433EE146841CC00181A48 /* HB_Q4_Iron_FPO.png in Resources */,
+				774433EF146841CC00181A48 /* HB_Q4_Iron_Thumb_FPO.png in Resources */,
+				774433F0146841CC00181A48 /* HB_Q4_Ketchup_FPO.png in Resources */,
+				774433F1146841CC00181A48 /* HB_Q4_Ketchup_Thumb_FPO.png in Resources */,
+				774433F2146841CC00181A48 /* HB_Q4_SodaCan_FPO.png in Resources */,
+				774433F3146841CC00181A48 /* HB_Q4_SodaCan_Thumb_FPO.png in Resources */,
+				774433F4146841CC00181A48 /* HB_Q5_Fridge_FPO.png in Resources */,
+				774433F5146841CC00181A48 /* HB_Q5_Fridge_Thumb_FPO.png in Resources */,
+				774433F6146841CC00181A48 /* HB_Q5_Garbage_FPO.png in Resources */,
+				774433F7146841CC00181A48 /* HB_Q5_Garbage_Thumb_FPO.png in Resources */,
+				774433F8146841CC00181A48 /* HB_Q5_Oven_FPO.png in Resources */,
+				774433F9146841CC00181A48 /* HB_Q5_Oven_Thumb_FPO.png in Resources */,
+				774433FA146841CC00181A48 /* HB_Q5_Toilet_FPO.png in Resources */,
+				774433FB146841CC00181A48 /* HB_Q5_Toilet_Thumb_FPO.png in Resources */,
+				7723539214684FC5006B4ADA /* HB_Menu_Line_FPO.png in Resources */,
+				77A8FFDC14689FB4008481B3 /* HB_Background_FPO.jpg in Resources */,
+				77A8FFE01469C343008481B3 /* vocals1.wav in Resources */,
+				77A8FFE11469C343008481B3 /* vocals2.wav in Resources */,
+				77A8FFE21469C343008481B3 /* vocals3.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +545,7 @@
 				19C678E5143A0D7100092485 /* HouseBand_devAppDelegate.m in Sources */,
 				19C678EB143A0D7100092485 /* HouseBand_devViewController.m in Sources */,
 				19C67932143A31C400092485 /* HouseBandTrack.m in Sources */,
+				774433A81468307E00181A48 /* HouseCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +615,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -424,7 +630,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;

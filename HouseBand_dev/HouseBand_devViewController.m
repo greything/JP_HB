@@ -33,6 +33,12 @@
     
     [self setUpDirectory];
     
+    UIImageView * bg_a = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,1024,768)];
+    bg_a.image = [UIImage imageNamed:@"HB_Background_FPO.jpg"];
+    
+    [self.view addSubview:bg_a];
+    
+    
     counter = 0;
     displayLink = [CADisplayLink displayLinkWithTarget:self 
 											  selector:@selector(update:)]; [displayLink addToRunLoop:[NSRunLoop mainRunLoop] 
@@ -40,161 +46,215 @@
 	[displayLink setFrameInterval:1];
     
     NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], @"track1.mp3" ]];
+    time_track = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    time_track.numberOfLoops = -1;
+    time_track.delegate = self;
+    NSTimeInterval now = time_track.deviceCurrentTime;
     
-    AVAudioPlayer* temp_track = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    temp_track.numberOfLoops = -1;
-    temp_track.delegate = self;
-    NSTimeInterval now = temp_track.deviceCurrentTime;
+    
 
-    track_a = [HouseBandTrack alloc];
-    track_b = [HouseBandTrack alloc];
-    track_c = [HouseBandTrack alloc];
-    track_d = [HouseBandTrack alloc];
+    HouseBandTracks = [[NSMutableArray alloc] init];
+    //initialize tracks
+    HouseBandTrack * temp_t = [HouseBandTrack alloc];    
+    for(int i = 0; i < 5; i++){
+        temp_t = [HouseBandTrack alloc];
+        [HouseBandTracks addObject:temp_t];
+    }
     
-    [track_a initTracks:@"drums" at:now];
-    [track_b initTracks:@"perc" at:now];
-    [track_c initTracks:@"bass" at:now];
-    [track_d initTracks:@"synth" at:now];
+    [[HouseBandTracks objectAtIndex:0] initTracks:@"vocals" at:now];
+    [[HouseBandTracks objectAtIndex:1] initTracks:@"drums" at:now];
+    [[HouseBandTracks objectAtIndex:2] initTracks:@"perc" at:now];
+    [[HouseBandTracks objectAtIndex:3] initTracks:@"synth" at:now];
+    [[HouseBandTracks objectAtIndex:4] initTracks:@"bass" at:now];
+
     
-    [track_a doLoop:0];
-    [track_b doLoop:0];
-    [track_c doLoop:0];
-    [track_d doLoop:0];
-    
-        
     UIButton *playButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-    playButton.frame = CGRectMake(10.0, 360.0, 100.0, 30.0);
-    [playButton setBackgroundColor:[UIColor greenColor]];
-   // [playButton setBackgroundImage:[UIImage imageNamed:@"211502_801679_5924406_q.jpg"] forState:UIControlStateNormal];
-    [playButton setTitle:@"Play" forState:UIControlStateNormal];
+    playButton.frame = CGRectMake(20.0, 190.0, 70.0, 60.0);
+    [playButton setBackgroundColor:[UIColor purpleColor]];
+    [playButton setTitle:@"SFX" forState:UIControlStateNormal];
     [playButton addTarget:self action:@selector(playAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playButton];  
     
+    UIButton *playAllButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    playAllButton.frame = CGRectMake(300.0, 190.0, 70.0, 60.0);
+    [playAllButton setBackgroundColor:[UIColor greenColor]];
+    [playAllButton setTitle:@"Play" forState:UIControlStateNormal];
+    [playAllButton addTarget:self action:@selector(playAll:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:playAllButton];  
+    
+    UIButton *stopButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    stopButton.frame = CGRectMake(220.0, 190.0, 70.0, 60.0);
+    [stopButton setBackgroundColor:[UIColor blueColor]];
+    [stopButton setTitle:@"Stop" forState:UIControlStateNormal];
+    [stopButton addTarget:self action:@selector(stopAll:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:stopButton]; 
+    
     recordButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     
-    recordButton.frame = CGRectMake(10.0, 460.0, 100.0, 30.0);
+    recordButton.frame = CGRectMake(140.0, 190.0, 70.0, 60.0);
     [recordButton setBackgroundColor:[UIColor redColor]];
-
     [recordButton setTitle:@"Record" forState:UIControlStateNormal];
     [recordButton addTarget:self action:@selector(startAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:recordButton]; 
-    
-    int ui_loop_width = 220;
-    int ui_loop_height = 220;
-    
-    int column_width = 230;
-    int column_height = 230;
-    
-    int button_offset_x = 120;
-    int button_offset_y = 34;
-    
-    int current_column = 0;
-    
-    int new_x = button_offset_x + (current_column * column_width);
-    int new_y = button_offset_y + (0 * column_height);
+        
+    [self createCharacters];
 
-    
-    loop1 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop1.backgroundColor = [UIColor redColor];
-    loop1.userInteractionEnabled = YES;
-    [self.view addSubview:loop1];
-    [loop1 release];
+    [self createButtons];
     
     
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (1 * column_height);
-    loop2 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop2.backgroundColor = [UIColor blueColor];
-    loop2.userInteractionEnabled = YES;
-    [self.view addSubview:loop2];
-    [loop2 release];
+    Families = [[NSMutableArray alloc] init];
     
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (2 * column_height);
-    loop3 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop3.backgroundColor = [UIColor greenColor];
-    loop3.userInteractionEnabled = YES;
-    [self.view addSubview:loop3];
-    [loop3 release];
+    [Families addObject:[[characters objectAtIndex:0] large_image]];
+    [Families addObject:[[characters objectAtIndex:4] large_image]];
+    [Families addObject:[[characters objectAtIndex:8] large_image]];
+    [Families addObject:[[characters objectAtIndex:12] large_image]];
+    [Families addObject:[[characters objectAtIndex:16] large_image]];
     
-    
-    current_column = 1;
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (0 * column_height);
-    loop4 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop4.backgroundColor = UIColorFromRGB(0xCECECE);
-    loop4.userInteractionEnabled = YES;
-    [self.view addSubview:loop4];
-    [loop4 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (1 * column_height);
-    loop5 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop5.backgroundColor = [UIColor blueColor];
-    loop5.userInteractionEnabled = YES;
-    [self.view addSubview:loop5];
-    [loop5 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (2 * column_height);
-    loop6 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop6.backgroundColor = [UIColor greenColor];
-    loop6.userInteractionEnabled = YES;
-    [self.view addSubview:loop6];
-    [loop6 release];
-    
-    current_column = 2;
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (0 * column_height);
-    loop7 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop7.backgroundColor = [UIColor redColor];
-    loop7.userInteractionEnabled = YES;
-    [self.view addSubview:loop7];
-    [loop7 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (1 * column_height);
-    loop8 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop8.backgroundColor = [UIColor blueColor];
-    loop8.userInteractionEnabled = YES;
-    [self.view addSubview:loop8];
-    [loop8 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (2 * column_height);
-    loop9 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop9.backgroundColor = [UIColor greenColor];
-    loop9.userInteractionEnabled = YES;
-    [self.view addSubview:loop9];
-    [loop9 release];
+    [self setCharacter:0];
+    [self setCharacter:4];
+    [self setCharacter:8];
+    [self setCharacter:12];
+    [self setCharacter:16];
 
-    current_column = 3;
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (0 * column_height);
-    loop10 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop10.backgroundColor = [UIColor redColor];
-    loop10.userInteractionEnabled = YES;
-    [self.view addSubview:loop10];
-    [loop10 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (1 * column_height);
-    loop11 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop11.backgroundColor = [UIColor blueColor];
-    loop11.userInteractionEnabled = YES;
-    [self.view addSubview:loop11];
-    [loop11 release];
-    
-    new_x = button_offset_x + (current_column * column_width);
-    new_y = button_offset_y + (2 * column_height);
-    loop12 = [[UIView alloc] initWithFrame:CGRectMake(new_x,new_y,ui_loop_width,ui_loop_height)];
-    loop12.backgroundColor = [UIColor greenColor];
-    loop12.userInteractionEnabled = YES;
-    [self.view addSubview:loop12];
-    [loop12 release];
-    
     [super viewDidLoad];
 }
+
+-(void) createCharacters{
+    
+    NSMutableArray* character_names = [[NSMutableArray alloc] init];
+    
+    [character_names addObject:@"Q1_Dad"]; 
+    [character_names addObject:@"Q1_Mom"]; 
+    [character_names addObject:@"Q1_Girl"]; 
+    [character_names addObject:@"Q1_Boy"]; 
+    
+    [character_names addObject:@"Q2_Dishwasher"]; 
+    [character_names addObject:@"Q2_Dryer"]; 
+    [character_names addObject:@"Q2_Vaccum"]; 
+    [character_names addObject:@"Q2_Washer"];     
+    
+    [character_names addObject:@"Q3_Computer"]; 
+    [character_names addObject:@"Q3_Kettle"]; 
+    [character_names addObject:@"Q3_Toaster"]; 
+    [character_names addObject:@"Q3_TV"]; 
+    
+    [character_names addObject:@"Q4_BlowDryer"]; 
+    [character_names addObject:@"Q4_Iron"]; 
+    [character_names addObject:@"Q4_Ketchup"]; 
+    [character_names addObject:@"Q4_SodaCan"]; 
+    
+    [character_names addObject:@"Q5_Fridge"]; 
+    [character_names addObject:@"Q5_Garbage"]; 
+    [character_names addObject:@"Q5_Oven"]; 
+    [character_names addObject:@"Q5_Toilet"]; 
+
+    characters = [[NSMutableArray alloc] init];  
+    
+    HouseCharacter* temp_char;
+    
+    for(int i = 0; i < [character_names count]; i++){
+        
+        temp_char = [HouseCharacter alloc];
+        [temp_char initWithPrefix:[character_names objectAtIndex:i]];
+        [characters addObject:temp_char]; 
+        
+    }
+    
+    NSLog(@"%i", [characters count]);
+
+    
+}
+
+-(void) createButtons{
+    
+    buttons = [[UIView alloc] initWithFrame:CGRectMake(10,10,10,10)];
+    [self moveButtonsTo:0];
+    
+    buttons.backgroundColor = [UIColor redColor];
+    
+    UIButton * temp_char;// = [[UIImageView alloc] initWithFrame:CGRectMake(20,20,20,20)];
+    
+    int new_x = 50;
+    
+    for(int i = 0; i < [characters count]; i++){
+        
+        temp_char = [[characters objectAtIndex:i] thumb];
+        
+        temp_char.tag = i;
+        
+        [temp_char addTarget:self action:@selector(chooseCharacter:) forControlEvents:UIControlEventTouchUpInside];
+
+        temp_char.center = CGPointMake(new_x, 50);
+                    
+        [buttons addSubview:temp_char];
+        
+        if(i % 4 == 3){
+            
+            UIImageView * temp_line = [[UIImageView alloc] 
+                                       initWithImage:[UIImage imageNamed:@"HB_Menu_Line_FPO.png"]];
+            
+            temp_line.center = CGPointMake(new_x + 65, 50);
+            
+            [buttons addSubview:temp_line];
+            
+        }
+        
+        new_x = new_x + 120;
+        
+    }
+
+    [self.view addSubview:buttons];
+    
+    [self moveButtonsTo:20];
+    
+}
+
+-(void) moveButtonsTo:(int)left{
+    
+    buttons.frame = CGRectMake(left, 648, 2500, 120);
+    
+}
+
+-(void)chooseCharacter:(id)sender {
+    
+    int track = ((UIControl *) sender).tag;
+    [self setCharacter:track];
+
+}
+
+-(void) setCharacter:(int)track{
+    
+    int family = track / 4;
+    int family_track = track - (family * 4);
+    
+    //[self.view addSubview:[[characters objectAtIndex:track] large_image]];
+    
+    [[Families objectAtIndex:family] removeFromSuperview];
+    [Families replaceObjectAtIndex:family withObject:[[characters objectAtIndex:track] large_image]];
+    [self.view insertSubview:[Families objectAtIndex:family] belowSubview:buttons];    
+    [[HouseBandTracks objectAtIndex:family] doLoop:family_track];
+    
+    NSLog(@"button is saying to go to track %i, family is %i, making family track : %i", track, family, family_track);
+    
+}
+
+-(void)stopAll:(id)sender{
+    for(int i = 0; i < [HouseBandTracks count]; i++){
+        [[HouseBandTracks objectAtIndex:i] stop];
+    }
+}
+
+
+-(void)playAll:(id)sender{
+    
+    NSTimeInterval now = time_track.deviceCurrentTime;
+    
+    for(int i = 0; i < [HouseBandTracks count]; i++){
+        [[HouseBandTracks objectAtIndex:i] playAt:now];
+    }
+}
+
+
 
 -(void)playAction:(id)sender {
     
@@ -203,23 +263,48 @@
         [one_shot_track stop];
         one_shot_track.currentTime = 0;
         [one_shot_track play];
-        
     }
     
 }
 
+
+-(void)lowerTracks{
+    for(int i = 0; i < [HouseBandTracks count]; i++){
+        
+        [[HouseBandTracks objectAtIndex:i] lowerVolume];
+        
+    }
+}
+
+-(void)restoreTracks{
+    for(int i = 0; i < [HouseBandTracks count]; i++){
+        
+        [[HouseBandTracks objectAtIndex:i] restoreVolume];
+        
+    }
+}
+
+
+//Recording. Durration specified here.
 -(void)startAction:(id)sender {
+    
+    
     NSLog(@"start action!");
+    
+    if(!recording){
+        recording = YES;
+
+    [self lowerTracks];
 
     [recordButton setBackgroundColor:[UIColor yellowColor]];
 
     [self startRecording];
-    NSTimer* my_timer = [NSTimer scheduledTimerWithTimeInterval:5.0
+    NSTimer* my_timer = [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(stopAction:)
                                    userInfo:nil
                                     repeats:NO];
-    
+    }
 }
 
 -(void)stopAction:(id)sender {
@@ -229,6 +314,9 @@
     NSLog(@"stop action!");
 
     [self stopRecording];
+    [self restoreTracks];
+    
+    recording = NO;
 
     
 }
@@ -266,7 +354,17 @@
 	// get the touch location
 	//CGPoint touchLocation = [touch locationInView:self.view];
 	
-
+    for (id touch in [event allTouches]) {
+        
+        if([touch view] == buttons){
+            
+            NSLog(@"touched buttons");
+            buttons_touch = [touch locationInView:self.view];
+            buttons_offset = buttons.frame.origin.x;
+            
+        }
+        
+    }
 	
 	    
 }
@@ -274,7 +372,17 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
-	[self touchesBegan:touches withEvent:event];
+	//[self touchesBegan:touches withEvent:event];
+    
+    for (id touch in [event allTouches]) {
+        
+        if([touch view] == buttons){
+            
+            [self moveButtonsTo: buttons_offset + [touch locationInView:self.view].x - buttons_touch.x];    
+            
+        }
+        
+    }
 	
 }
 
@@ -282,46 +390,14 @@
 	
     for (id touch in [event allTouches]) {
         
-        if ([touch view] == loop1) {
-            [track_a doLoop:0];
+        for(int i = 0; i < [Families count]; i++){
+            if([touch view] == [Families objectAtIndex:i]){
+                
+                int ct = [[HouseBandTracks objectAtIndex:i] current_track];
+                [[HouseBandTracks objectAtIndex:i] doLoop:ct];
+                    
+            }
         }
-        else if ([touch view] == loop2) {
-            [track_a doLoop:1];
-        }	
-        else if ([touch view] == loop3) {
-            [track_a doLoop:2];
-        }
-        
-        if ([touch view] == loop4) {
-            [track_b doLoop:0];
-        }
-        else if ([touch view] == loop5) {
-            [track_b doLoop:1];
-        }	
-        else if ([touch view] == loop6) {
-            [track_b doLoop:2];
-        }
-        
-        if ([touch view] == loop7) {
-            [track_c doLoop:0];
-        }
-        else if ([touch view] == loop8) {
-            [track_c doLoop:1];
-        }	
-        else if ([touch view] == loop9) {
-            [track_c doLoop:2];
-        }
-        
-        if ([touch view] == loop10) {
-            [track_d doLoop:0];
-        }
-        else if ([touch view] == loop11) {
-            [track_d doLoop:1];
-        }	
-        else if ([touch view] == loop12) {
-            [track_d doLoop:2];
-        }
-        
         
     }
 }
@@ -329,60 +405,38 @@
 
 - (void) update:(CADisplayLink*)displayLink {
     
-    float loop1level = [track_a getVol:0];
-    float loop2level = [track_a getVol:1];
-    float loop3level = [track_a getVol:2];
-    
-    float loop4level = [track_b getVol:0];
-    float loop5level = [track_b getVol:1];
-    float loop6level = [track_b getVol:2];
-    
-    float loop7level = [track_c getVol:0];
-    float loop8level = [track_c getVol:1];
-    float loop9level = [track_c getVol:2];
-    
-    float loop10level = [track_d getVol:0];
-    float loop11level = [track_d getVol:1];
-    float loop12level = [track_d getVol:2];
+    float track0_vol = [[HouseBandTracks objectAtIndex:0] getCurrentVol];
+    float track1_vol = [[HouseBandTracks objectAtIndex:1] getCurrentVol];
+    float track2_vol = [[HouseBandTracks objectAtIndex:2] getCurrentVol];
+    float track3_vol = [[HouseBandTracks objectAtIndex:3] getCurrentVol];
+    float track4_vol = [[HouseBandTracks objectAtIndex:4] getCurrentVol];
 
-    /*
-    loop1.center = CGPointMake(200 + loop1level, loop1.center.y);
-    loop2.center = CGPointMake(200 + loop2level, loop2.center.y);
-    loop3.center = CGPointMake(200 + loop3level, loop3.center.y);
+    CGPoint q1_center = CGPointMake(130 + track0_vol, 500);
+    CGPoint q2_center = CGPointMake(600, 610 + track1_vol);
+    CGPoint q3_center = CGPointMake(620 - track2_vol, 400);
+    CGPoint q4_center = CGPointMake(520 - track3_vol, 200);
+    CGPoint q5_center = CGPointMake(870 + track4_vol, 400);
+
+    UIImageView * temp_view = [Families objectAtIndex:0];
+    temp_view.center = q1_center;
     
-    loop4.center = CGPointMake(200 + loop4level, loop4.center.y);
-    loop5.center = CGPointMake(200 + loop5level, loop5.center.y);
-    loop6.center = CGPointMake(200 + loop6level, loop6.center.y);
+    temp_view = [Families objectAtIndex:1];
     
-    loop7.center = CGPointMake(200 + loop7level, loop7.center.y);
-    loop8.center = CGPointMake(200 + loop8level, loop8.center.y);
-    loop9.center = CGPointMake(200 + loop9level, loop9.center.y);
+    temp_view.center = q2_center;
     
-    loop10.center = CGPointMake(400 + loop10level, loop10.center.y);
-    loop11.center = CGPointMake(400 + loop11level, loop11.center.y);
-    loop12.center = CGPointMake(400 + loop12level, loop12.center.y);
-    */
+    temp_view = [Families objectAtIndex:2];
+    temp_view.center = q3_center;
+    
+    temp_view = [Families objectAtIndex:3];
+    temp_view.center = q4_center;
+    
+    temp_view = [Families objectAtIndex:4];
+    temp_view.center = q5_center;
+
     
     float rest_opacity = .5;
     float neg_scale = 50.0;
-    
-    
-    loop1.alpha = rest_opacity + (loop1level / neg_scale);
-    loop2.alpha = rest_opacity + (loop2level / neg_scale);
-    loop3.alpha = rest_opacity + (loop3level / neg_scale);
-    
-    loop4.alpha = rest_opacity + (loop4level / neg_scale);
-    loop5.alpha = rest_opacity + (loop5level / neg_scale);
-    loop6.alpha = rest_opacity + (loop6level / neg_scale);
-    
-    loop7.alpha = rest_opacity + (loop7level / neg_scale);
-    loop8.alpha = rest_opacity + (loop8level / neg_scale);
-    loop9.alpha = rest_opacity + (loop9level / neg_scale);
-    
-    loop10.alpha = rest_opacity + (loop10level / neg_scale);
-    loop11.alpha = rest_opacity + (loop11level / neg_scale);
-    loop12.alpha = rest_opacity + (loop12level / neg_scale);
-     
+
     counter = counter + 1;
 
 

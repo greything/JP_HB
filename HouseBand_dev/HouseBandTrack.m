@@ -11,6 +11,8 @@
 
 @implementation HouseBandTrack
 
+@synthesize current_track;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,7 +34,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
 
 -(void)initTracks:(NSString*)prefix at:(NSTimeInterval)now{
     
@@ -67,13 +68,7 @@
     track4.delegate = self;
     
     [url release];
-    
-    url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath],prefix, @"3.wav" ]];
-    track5 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    track5.numberOfLoops = -1;
-    track5.meteringEnabled = YES;
-    track5.delegate = self;
-    
+
     NSTimeInterval playbackDelay = 0;              // must be ≥ 0
     
     
@@ -83,51 +78,88 @@
     [track2 playAtTime: now + playbackDelay];
     [track3 playAtTime: now + playbackDelay];
     [track4 playAtTime: now + playbackDelay];
-    [track5 playAtTime: now + playbackDelay];
     
     current_track = 0;
     all_muted = YES;
 }
 
+-(void)stop{
+    
+    [track1 pause];
+    [track2 pause];
+    [track3 pause];
+    [track4 pause];
+    
+}
+
+-(void)playAt:(NSTimeInterval)now{
+    NSTimeInterval playbackDelay = 0;              // must be ≥ 0
+
+    
+    [track1 playAtTime: now + playbackDelay];
+    [track2 playAtTime: now + playbackDelay];
+    [track3 playAtTime: now + playbackDelay];
+    [track4 playAtTime: now + playbackDelay];
+}
+
+-(void)lowerVolume{
+    
+    float scale = .05;
+    
+    ftrack1vol = track1.volume;
+    ftrack2vol = track2.volume;
+    ftrack3vol = track3.volume;
+    ftrack4vol = track4.volume;
+    
+    track1.volume = track1.volume * scale;
+    track2.volume = track2.volume * scale;
+    track3.volume = track3.volume * scale;
+    track4.volume = track4.volume * scale;
+    
+}
+
+-(void)restoreVolume{
+    
+    track1.volume = ftrack1vol;
+    track2.volume = ftrack2vol;
+    track3.volume = ftrack3vol;
+    track4.volume = ftrack4vol;
+    
+}
+
+
 -(void)doLoop:(int)track{
     
     
     switch(track){
+        case -1:
+            [self muteAll];
+            break;
         case 0:
             track1.volume = 1;
             track2.volume = 0;
             track3.volume = 0;
             track4.volume = 0;
-            track5.volume = 0;
             break;
         case 1:
             track1.volume = 0;
             track2.volume = 1;
             track3.volume = 0;
             track4.volume = 0;
-            track5.volume = 0;
             break;
         case 2:
             track1.volume = 0;
             track2.volume = 0;
             track3.volume = 1;
             track4.volume = 0;
-            track5.volume = 0;
             break;
         case 3:
             track1.volume = 0;
             track2.volume = 0;
             track3.volume = 0;
             track4.volume = 1;
-            track5.volume = 0;
             break;
-        case 4:
-            track1.volume = 0;
-            track2.volume = 0;
-            track3.volume = 0;
-            track4.volume = 0;
-            track5.volume = 1;
-            break;
+  
     }
     
     NSLog(@"dooooooloop%i", track);
@@ -145,8 +177,11 @@
     }
     
     current_track = track;
-
     
+    ftrack1vol = track1.volume;
+    ftrack2vol = track2.volume;
+    ftrack3vol = track3.volume;
+    ftrack4vol = track4.volume;
     
 }
 
@@ -155,10 +190,36 @@
     track2.volume = 0;
     track3.volume = 0;
     track4.volume = 0;
-    track5.volume = 0;
     all_muted = YES;
 }
 
+
+-(float)getCurrentVol{
+    
+    float level = 0;
+    
+    switch(current_track){
+        case 0:
+            [track1 updateMeters];
+            level = [track1 averagePowerForChannel:1] * track1.volume;
+            break;
+        case 1:
+            [track2 updateMeters];
+            level = [track2 averagePowerForChannel:1] * track2.volume;
+            break;
+        case 2:
+            [track3 updateMeters];
+            level = [track3 averagePowerForChannel:1] * track3.volume;
+            break;
+        case 3:
+            [track4 updateMeters];
+            level = [track4 averagePowerForChannel:1] * track4.volume;
+            break;
+    }
+    
+    return (level * .25);
+    
+}
 
 -(float)getVol:(int)track{
     
@@ -180,10 +241,6 @@
         case 3:
             [track4 updateMeters];
             level = [track4 averagePowerForChannel:1] * track4.volume;
-            break;
-        case 4:
-            [track5 updateMeters];
-            level = [track5 averagePowerForChannel:1] * track5.volume;
             break;
     }
     

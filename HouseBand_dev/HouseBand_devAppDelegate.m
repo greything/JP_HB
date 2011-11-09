@@ -19,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"first thing");
     // Override point for customization after application launch.
      
     self.window.rootViewController = self.viewController;

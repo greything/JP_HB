@@ -16,22 +16,37 @@
     AVAudioPlayer *track2;
     AVAudioPlayer *track3;
     AVAudioPlayer *track4;
-    AVAudioPlayer *track5;
+    
+    
+    float ftrack1vol;
+    float ftrack2vol;
+    float ftrack3vol;
+    float ftrack4vol;
+
     
     int current_track;
     bool all_muted;
     
 }
+@property(assign) int current_track;
+
 @property (nonatomic, retain) AVAudioPlayer *track1;
 @property (nonatomic, retain) AVAudioPlayer *track2;
 @property (nonatomic, retain) AVAudioPlayer *track3;
 @property (nonatomic, retain) AVAudioPlayer *track4;
-@property (nonatomic, retain) AVAudioPlayer *track5;
 
 -(void)initTracks:(NSString*)prefix at:(NSTimeInterval)now;
 
 -(void)doLoop:(int)track;
 -(float)getVol:(int)track;
+-(float)getCurrentVol;
+
+-(void)stop;
+-(void)playAt:(NSTimeInterval)now;
+
+-(void)lowerVolume;
+-(void)restoreVolume;
+
 -(void)muteAll;
 
 @end
