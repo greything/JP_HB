@@ -26,6 +26,6 @@
 @property (assign) CGPoint cc;
 
 
--(void)initWithPrefix:(NSString*)prefix;
+-(void)initWithPrefix:(NSString*)prefix andCenter:(CGPoint)xy;
 
 @end

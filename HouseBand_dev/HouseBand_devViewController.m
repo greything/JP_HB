@@ -134,6 +134,36 @@
 -(void) createCharacters{
     
     NSMutableArray* character_names = [[NSMutableArray alloc] init];
+    CGPoint character_centers[] = {
+    
+        CGPointMake(150,500), //0
+        CGPointMake(150,500), //1
+        CGPointMake(150,600), //2
+        CGPointMake(150,600), //3
+        
+        CGPointMake(600,610), //4
+        CGPointMake(600,610), //5
+        CGPointMake(600,610), //6
+        CGPointMake(600,610), //7
+        
+        CGPointMake(620,400), //8
+        CGPointMake(620,400), //9
+        CGPointMake(620,380), //10
+        CGPointMake(620,350), //11
+        
+        CGPointMake(520,200), //12
+        CGPointMake(520,200), //13
+        CGPointMake(520,200), //14
+        CGPointMake(520,200), //15
+        
+        CGPointMake(870,430), //16
+        CGPointMake(890,530), //17
+        CGPointMake(870,490), //18
+        CGPointMake(880,550) //19
+
+    
+    };
+
     
     [character_names addObject:@"Q1_Dad"]; 
     [character_names addObject:@"Q1_Mom"]; 
@@ -167,12 +197,10 @@
     for(int i = 0; i < [character_names count]; i++){
         
         temp_char = [HouseCharacter alloc];
-        [temp_char initWithPrefix:[character_names objectAtIndex:i]];
+        [temp_char initWithPrefix:[character_names objectAtIndex:i] andCenter:CGPointMake(character_centers[i].x, character_centers[i].y)];
         [characters addObject:temp_char]; 
         
     }
-    
-    
     
     
     NSLog(@"%i", [characters count]);
@@ -502,12 +530,24 @@ lowerTracks and restoreTracks are called to dip the volume and then return it to
     if(playing){
     
     CGPoint tempp = [[Families objectAtIndex:0] cc];
+    CGPoint q1_center = CGPointMake(tempp.x + track0_vol, tempp.y);
+    //
         
-    CGPoint q1_center = CGPointMake( tempp.x + track0_vol, tempp.y);
-    CGPoint q2_center = CGPointMake(600, 610 + track1_vol);
-    CGPoint q3_center = CGPointMake(620 - track2_vol, 400);
-    CGPoint q4_center = CGPointMake(520 - track3_vol, 200);
-    CGPoint q5_center = CGPointMake(870 + track4_vol, 400);
+    tempp = [[Families objectAtIndex:1] cc];
+    CGPoint q2_center = CGPointMake(tempp.x, tempp.y + track1_vol);
+    //600, 610
+        
+    tempp = [[Families objectAtIndex:2] cc];    
+    CGPoint q3_center = CGPointMake(tempp.x - track2_vol, tempp.y);
+    //620, 400
+        
+    tempp = [[Families objectAtIndex:3] cc];
+    CGPoint q4_center = CGPointMake(tempp.x - track3_vol, tempp.y);
+    //520, 200
+        
+    tempp = [[Families objectAtIndex:4] cc];
+    CGPoint q5_center = CGPointMake(tempp.x + track4_vol, tempp.y);
+    //870, 400
     
 
     UIImageView * temp_view = [[Families objectAtIndex:0] large_image];

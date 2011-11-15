@@ -30,7 +30,9 @@
     return self;
 }
 
--(void)initWithPrefix:(NSString*)prefix{
+-(void)initWithPrefix:(NSString*)prefix andCenter:(CGPoint)xy{
+    
+    cc = CGPointMake(xy.x, xy.y);
     
     NSLog(prefix);
     
