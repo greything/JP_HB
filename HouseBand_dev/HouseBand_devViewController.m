@@ -67,7 +67,7 @@
     [[HouseBandTracks objectAtIndex:3] initTracks:@"synth" at:now];
     [[HouseBandTracks objectAtIndex:4] initTracks:@"bass" at:now];
 
-    playing = true;
+    playing = YES;
     
     UIButton *clearAllButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     clearAllButton.frame = CGRectMake(20.0, 190.0, 70.0, 60.0);
@@ -125,7 +125,7 @@
    // [self setCharacter:12];
    // [self setCharacter:16];
     
-    [self stopAll];
+    [self clearAll];
     
 
     [super viewDidLoad];
@@ -231,6 +231,8 @@
 -(void)chooseCharacter:(id)sender {
     
     int track = ((UIControl *) sender).tag;
+    NSLog(@"Choosing character");
+
     [self setCharacter:track];
 
 }
@@ -251,12 +253,14 @@
     NSLog(@"setting track %i to be translucent", track);
 
     
-    //[self.view addSubview:[[characters objectAtIndex:track] large_image]];
     
     [[Families objectAtIndex:family] removeFromSuperview];
     [Families replaceObjectAtIndex:family withObject:[[characters objectAtIndex:track] large_image]];
     [self.view insertSubview:[Families objectAtIndex:family] belowSubview:buttons];    
+    
+    
     [[HouseBandTracks objectAtIndex:family] doLoop:family_track];
+    
     
     NSLog(@"button is saying to go to track %i, family is %i, making family track : %i", track, family, family_track);
     [self playAll];//if not playing, start
@@ -272,7 +276,7 @@
 -(void) stopAll{
     
     if(playing){
-        playing = false;
+        playing = NO;
         
         NSLog(@"stop all action!");
         
@@ -286,7 +290,14 @@
 
 -(void) clearAll:(id)sender{
     
-    [self stopAll];
+    [self clearAll];
+    
+}
+
+-(void) clearAll{
+    
+    playing = YES;
+
     
     for(int i = 0; i < [Families count]; i++){
         
@@ -300,6 +311,10 @@
         [[buttons viewWithTag:i] setAlpha:1];
         
     }
+    [self stopAll];
+
+    
+    [self playAll];
 }
 
 -(void)playAll:(id)sender{
@@ -312,7 +327,7 @@
 
     if(!playing)
     {
-        playing = true;
+        playing = YES;
         
         NSTimeInterval now = time_track.deviceCurrentTime;
         

@@ -90,10 +90,15 @@
     [track3 pause];
     [track4 pause];
     
+    [track1 stop];
+    [track2 stop];
+    [track3 stop];
+    [track4 stop];
+    
 }
 
 -(void)playAt:(NSTimeInterval)now{
-    NSTimeInterval playbackDelay = 0;  // must be ≥ 0
+    NSTimeInterval playbackDelay = 1;  // must be ≥ 0
 
     [self stop];
     
