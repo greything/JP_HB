@@ -279,9 +279,9 @@
 				19C678EA143A0D7100092485 /* HouseBand_devViewController.m */,
 				774433A51468307E00181A48 /* HouseCharacter.h */,
 				774433A61468307E00181A48 /* HouseCharacter.m */,
-				774433A71468307E00181A48 /* HouseCharacter.xib */,
 				19C67930143A31C400092485 /* HouseBandTrack.h */,
 				19C67931143A31C400092485 /* HouseBandTrack.m */,
+				774433A71468307E00181A48 /* HouseCharacter.xib */,
 				19C678EC143A0D7100092485 /* HouseBand_devViewController.xib */,
 				19C678DB143A0D7100092485 /* Supporting Files */,
 			);

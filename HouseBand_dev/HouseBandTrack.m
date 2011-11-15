@@ -37,6 +37,7 @@
 
 -(void)initTracks:(NSString*)prefix at:(NSTimeInterval)now{
     
+    
     NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@%@", [[NSBundle mainBundle] resourcePath], prefix, @"1.wav" ]];
     track1 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     track1.numberOfLoops = -1;
@@ -146,7 +147,10 @@
 
 -(void)doLoop:(int)track{
     
-    
+    if(current_track != track){
+        all_muted = NO;
+    }
+
     switch(track){
         case -1:
             [self muteAll];
@@ -231,6 +235,12 @@
             [track4 updateMeters];
             level = [track4 averagePowerForChannel:1] * track4.volume;
             break;
+    }
+    
+    if(level < -30){
+        
+        level = -30;
+        
     }
     
     return (level * .25);

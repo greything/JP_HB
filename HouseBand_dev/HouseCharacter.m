@@ -13,6 +13,10 @@
 
 @synthesize small_image;
 @synthesize large_image;
+@synthesize image_frame;
+
+@synthesize cc;
+
 
 @synthesize thumb;
 
@@ -43,6 +47,8 @@
 
     thumb = [UIButton buttonWithType:UIButtonTypeCustom];
     [thumb setImage:small_image.image forState:UIControlStateNormal];
+    
+    image_frame = large_image.frame;
     
     thumb.frame = small_image.frame;
     

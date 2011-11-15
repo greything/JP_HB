@@ -13,11 +13,18 @@
     UIImageView * small_image;
     UIImageView * large_image;
     UIButton * thumb;
+    CGRect image_frame;
+    CGPoint cc;
+
     
 }
 @property (retain, nonatomic) UIImageView * large_image;
 @property (retain, nonatomic) UIImageView * small_image;
 @property (retain, nonatomic) UIButton * thumb;
+
+@property (assign) CGRect image_frame;
+@property (assign) CGPoint cc;
+
 
 -(void)initWithPrefix:(NSString*)prefix;
 

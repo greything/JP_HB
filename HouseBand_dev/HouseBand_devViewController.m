@@ -113,11 +113,11 @@
     
     Families = [[NSMutableArray alloc] init];
     
-    [Families addObject:[[characters objectAtIndex:0] large_image]];
-    [Families addObject:[[characters objectAtIndex:4] large_image]];
-    [Families addObject:[[characters objectAtIndex:8] large_image]];
-    [Families addObject:[[characters objectAtIndex:12] large_image]];
-    [Families addObject:[[characters objectAtIndex:16] large_image]];
+    [Families addObject:[characters objectAtIndex:0]];
+    [Families addObject:[characters objectAtIndex:4]];
+    [Families addObject:[characters objectAtIndex:8]];
+    [Families addObject:[characters objectAtIndex:12]];
+    [Families addObject:[characters objectAtIndex:16]];
     
    //[self setCharacter:0];
    // [self setCharacter:4];
@@ -171,6 +171,9 @@
         [characters addObject:temp_char]; 
         
     }
+    
+    
+    
     
     NSLog(@"%i", [characters count]);
 
@@ -254,9 +257,9 @@
 
     
     
-    [[Families objectAtIndex:family] removeFromSuperview];
-    [Families replaceObjectAtIndex:family withObject:[[characters objectAtIndex:track] large_image]];
-    [self.view insertSubview:[Families objectAtIndex:family] belowSubview:buttons];    
+    [[[Families objectAtIndex:family] large_image] removeFromSuperview];
+    [Families replaceObjectAtIndex:family withObject:[characters objectAtIndex:track]];
+    [self.view insertSubview:[[Families objectAtIndex:family] large_image] belowSubview:buttons];    
     
     
     [[HouseBandTracks objectAtIndex:family] doLoop:family_track];
@@ -301,7 +304,7 @@
     
     for(int i = 0; i < [Families count]; i++){
         
-        [[Families objectAtIndex:i] removeFromSuperview];
+        [[[Families objectAtIndex:i] large_image] removeFromSuperview];
         [[HouseBandTracks objectAtIndex:i] muteAll];
         
     }
@@ -475,7 +478,7 @@ lowerTracks and restoreTracks are called to dip the volume and then return it to
     for (id touch in [event allTouches]) {
         
         for(int i = 0; i < [Families count]; i++){
-            if([touch view] == [Families objectAtIndex:i]){
+            if([touch view] == [[Families objectAtIndex:i] large_image]){
                 
                 int ct = [[HouseBandTracks objectAtIndex:i] current_track];
                 [[HouseBandTracks objectAtIndex:i] doLoop:ct];
@@ -495,31 +498,49 @@ lowerTracks and restoreTracks are called to dip the volume and then return it to
     float track3_vol = [[HouseBandTracks objectAtIndex:3] getCurrentVol];
     float track4_vol = [[HouseBandTracks objectAtIndex:4] getCurrentVol];
 
-    CGPoint q1_center = CGPointMake(130 + track0_vol, 500);
+    
+    if(playing){
+    
+    CGPoint tempp = [[Families objectAtIndex:0] cc];
+        
+    CGPoint q1_center = CGPointMake( tempp.x + track0_vol, tempp.y);
     CGPoint q2_center = CGPointMake(600, 610 + track1_vol);
     CGPoint q3_center = CGPointMake(620 - track2_vol, 400);
     CGPoint q4_center = CGPointMake(520 - track3_vol, 200);
     CGPoint q5_center = CGPointMake(870 + track4_vol, 400);
+    
 
-    UIImageView * temp_view = [Families objectAtIndex:0];
+    UIImageView * temp_view = [[Families objectAtIndex:0] large_image];
+    temp_view.layer.transform = CATransform3DMakeRotation(-1 * (track0_vol * .05), 1,1, 0);
+    temp_view.layer.zPosition = 1000;
     temp_view.center = q1_center;
     
-    temp_view = [Families objectAtIndex:1];
+    temp_view = [[Families objectAtIndex:1] large_image];
     
+    temp_view.layer.transform = CATransform3DMakeRotation(-1 * (track1_vol * .03), .5,.1, 0);
+    temp_view.layer.zPosition = 1000;
     temp_view.center = q2_center;
     
-    temp_view = [Families objectAtIndex:2];
+    temp_view = [[Families objectAtIndex:2] large_image];
+    temp_view.layer.transform = CATransform3DMakeRotation((track2_vol * .05), .1,1, 1);
+    temp_view.layer.zPosition = 1000;
     temp_view.center = q3_center;
     
-    temp_view = [Families objectAtIndex:3];
+    temp_view = [[Families objectAtIndex:3] large_image];
+    temp_view.layer.transform = CATransform3DMakeRotation((track3_vol * .02), .2,0, .1);
+    temp_view.layer.zPosition = 1000;
     temp_view.center = q4_center;
     
-    temp_view = [Families objectAtIndex:4];
+
+    temp_view = [[Families objectAtIndex:4] large_image];
+    temp_view.layer.transform = CATransform3DMakeRotation((track4_vol * .03), 1,1, 0);
+    temp_view.layer.zPosition = 1000;
     temp_view.center = q5_center;
 
     
     float rest_opacity = .5;
     float neg_scale = 50.0;
+    }
 
     counter = counter + 1;
 
