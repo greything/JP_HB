@@ -17,6 +17,7 @@
 
 @synthesize cc;
 
+@synthesize current_track;
 
 @synthesize thumb;
 

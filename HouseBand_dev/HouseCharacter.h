@@ -16,6 +16,7 @@
     CGRect image_frame;
     CGPoint cc;
 
+    int current_track;
     
 }
 @property (retain, nonatomic) UIImageView * large_image;
@@ -24,6 +25,9 @@
 
 @property (assign) CGRect image_frame;
 @property (assign) CGPoint cc;
+
+@property (assign) int current_track;
+
 
 
 -(void)initWithPrefix:(NSString*)prefix andCenter:(CGPoint)xy;
